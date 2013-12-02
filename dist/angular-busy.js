@@ -9,6 +9,7 @@ angular.module('cgBusy').directive('cgBusy',['promiseTracker','$compile','$templ
 			link: function(scope, element, attrs, fn) {
 
 				var options = scope.$eval(attrs.cgBusy);
+				scope.busyText = attrs.busyText || 'Please wait...';
 
 				if (typeof options === 'string'){
 					options = {tracker:options};
